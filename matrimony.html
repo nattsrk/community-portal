@@ -5,228 +5,289 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrimony - Community Portal</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' }
+                    },
+                    fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+                    boxShadow: { soft: '0 10px 30px -12px rgba(79,70,229,0.35)' }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <style>
-        .bg-primary {
-            background-color: #8B4513;
-        }
-
-        .bg-secondary {
-            background-color: #DEB887;
-        }
-
-        .text-primary {
-            color: #8B4513;
-        }
-
-        .hover-primary:hover {
-            background-color: #A0522D;
-        }
-
-        .border-primary {
-            border-color: #8B4513;
-        }
-
-        /* Background image for the entire page */
-        body {
-            background-image: url('/images/services.jpg');
-            /* Ensure the path is correct */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        .gradient-brand { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #9333ea 100%); }
+        .gradient-text { background: linear-gradient(135deg, #4f46e5, #9333ea); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -16px rgba(79,70,229,.35); }
+        .glass { background: rgba(255,255,255,.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .nav-link { position: relative; color: #334155; font-weight: 500; transition: color .2s; }
+        .nav-link:hover { color: #4f46e5; }
+        .nav-link::after { content: ''; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0; background: #4f46e5; transition: width .25s; }
+        .nav-link:hover::after { width: 100%; }
+        .hero-grid { background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.18) 1px, transparent 0); background-size: 32px 32px; }
     </style>
 </head>
 
-<body class="bg-gray-50">
+<body class="bg-slate-50">
     <!-- Navbar Start -->
-    <nav class="bg-primary text-white shadow-lg">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="text-2xl font-bold">Community</a>
-                <!-- Hamburger Icon for Mobile -->
-                <div class="md:hidden">
-                    <button id="menu-toggle" class="text-white focus:outline-none">
-                        <i class="fas fa-bars"></i>
-                    </button>
+    <header class="sticky top-0 z-50 glass border-b border-slate-200/60">
+        <nav class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-2">
+                    <span class="inline-flex items-center justify-center h-10 w-10 rounded-xl gradient-brand text-white font-bold text-lg shadow-soft">C</span>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900">Community</span>
+                </a>
+                <div class="hidden lg:flex items-center gap-7">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="links.html" class="nav-link">Resources</a>
+                    <a href="members.html" class="nav-link">Members</a>
+                    <a href="jobs.html" class="nav-link">Jobs</a>
+                    <a href="matrimony.html" class="nav-link">Matrimony</a>
+                    <a href="store.html" class="nav-link">Store</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
                 </div>
-
-                <!-- Main Menu Links (Desktop Only) -->
-                <div id="menu" class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="hover:text-gray-200">Home</a>
-                    <a href="about.html" class="hover:text-gray-200">About</a>
-                    <a href="services.html" class="hover:text-gray-200">Services</a>
-                    <a href="links.html" class="hover:text-gray-200">Resources</a>
-                    <a href="members.html" class="hover:text-gray-200">Members</a>
-                    <a href="jobs.html" class="hover:text-gray-200">Jobs</a>
-                    <a href="matrimony.html" class="hover:text-gray-200">Matrimony</a>
-                    <a href="store.html" class="hover:text-gray-200">Store</a>
-                    <a href="contact.html" class="hover:text-gray-200">Contact</a>
+                <div class="hidden lg:block">
+                    <a href="register.html" class="inline-flex items-center gap-2 gradient-brand text-white px-5 py-2.5 rounded-xl font-semibold shadow-soft hover:opacity-90 transition">Register</a>
                 </div>
+                <button id="menu-toggle" class="lg:hidden text-slate-700 text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
             </div>
-
-            <!-- Mobile Menu Links (Hidden by Default) -->
-            <div id="mobile-menu" class="hidden md:hidden flex flex-col mt-4 space-y-2">
-                <a href="index.html" class="hover:text-gray-200">Home</a>
-                <a href="about.html" class="hover:text-gray-200">About</a>
-                <a href="services.html" class="hover:text-gray-200">Services</a>
-                <a href="links.html" class="hover:text-gray-200">Resources</a>
-                <a href="members.html" class="hover:text-gray-200">Members</a>
-                <a href="jobs.html" class="hover:text-gray-200">Jobs</a>
-                <a href="matrimony.html" class="hover:text-gray-200">Matrimony</a>
-                <a href="store.html" class="hover:text-gray-200">Store</a>
-                <a href="contact.html" class="hover:text-gray-200">Contact</a>
-            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-4 flex-col gap-3">
+            <a href="index.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Home</a>
+            <a href="about.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">About</a>
+            <a href="services.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Services</a>
+            <a href="links.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Resources</a>
+            <a href="members.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Members</a>
+            <a href="jobs.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Jobs</a>
+            <a href="matrimony.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Matrimony</a>
+            <a href="store.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Store</a>
+            <a href="contact.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Contact</a>
+            <a href="register.html" class="gradient-brand text-white text-center px-5 py-2.5 rounded-xl font-semibold mt-2">Register</a>
         </div>
-    </nav>
-
-    <!-- JavaScript for Mobile Menu Toggle -->
+    </header>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const menuToggle = document.getElementById('menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            menuToggle.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+            var t = document.getElementById('menu-toggle'), m = document.getElementById('mobile-menu');
+            if (t && m) t.addEventListener('click', function () { m.classList.toggle('hidden'); m.classList.toggle('flex'); });
         });
     </script>
     <!-- Navbar End -->
 
-    <!-- Matrimony Header -->
-    <div class="bg-primary py-12 text-center text-white">
-        <h1 class="text-4xl font-bold">Find Your Perfect Match</h1>
-        <p class="text-lg mt-2">Join our matrimony service to connect with your life partner</p>
-    </div>
+    <!-- Hero Section -->
+    <section class="relative gradient-brand text-white overflow-hidden">
+        <div class="absolute inset-0 hero-grid opacity-60"></div>
+        <div class="relative max-w-7xl mx-auto px-6 py-24 md:py-28 text-center">
+            <span class="inline-flex items-center gap-2 bg-white/15 border border-white/20 text-white/90 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+                <i class="fas fa-heart"></i> Matrimony Service
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">Find Your Perfect Match</h1>
+            <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10">Join our matrimony service to connect with your life partner.</p>
 
-    <!-- Search Section -->
-    <div class="container mx-auto px-6 py-12">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <div class="grid md:grid-cols-3 gap-4">
-                <input type="text" placeholder="Search by Name"
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                <input type="text" placeholder="Search by Age"
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-opacity-90">Search</button>
+            <!-- Search Card -->
+            <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-soft p-5 text-left">
+                <div class="grid md:grid-cols-3 gap-3">
+                    <div class="relative">
+                        <i class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" placeholder="Search by Name"
+                            class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-calendar absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" placeholder="Search by Age"
+                            class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+                    </div>
+                    <button class="inline-flex items-center justify-center gap-2 gradient-brand text-white px-6 py-3 rounded-xl font-semibold shadow-soft hover:opacity-90 transition">
+                        <i class="fas fa-magnifying-glass"></i> Search
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="relative h-12 bg-slate-50 rounded-t-[2.5rem]"></div>
+    </section>
 
-    <!-- Matrimony Services Links -->
-    <div class="container mx-auto px-6 py-8 grid md:grid-cols-4 gap-6 text-center">
-        <a href="#" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <i class="fas fa-user-plus text-primary text-3xl mb-4"></i>
-            <p>Register Profile</p>
-        </a>
-        <a href="#" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <i class="fas fa-heart text-primary text-3xl mb-4"></i>
-            <p>Match Recommendations</p>
-        </a>
-        <a href="#" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <i class="fas fa-comments text-primary text-3xl mb-4"></i>
-            <p>Message Matches</p>
-        </a>
-        <a href="#" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <i class="fas fa-calendar-alt text-primary text-3xl mb-4"></i>
-            <p>Arrange Meetings</p>
-        </a>
-    </div>
+    <!-- How It Works Section -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">How it <span class="gradient-text">works</span></h2>
+            <p class="text-slate-500 text-lg">Four simple steps to begin your journey toward finding the one.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <a href="#" class="card-hover bg-white rounded-2xl p-8 border border-slate-100 shadow-sm text-center group">
+                <div class="relative inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-brand-50 text-brand-600 mb-6">
+                    <i class="fas fa-user-plus text-2xl"></i>
+                    <span class="absolute -top-2 -right-2 h-6 w-6 rounded-full gradient-brand text-white text-xs font-bold flex items-center justify-center">1</span>
+                </div>
+                <h3 class="text-lg font-bold">Register Profile</h3>
+            </a>
+            <a href="#" class="card-hover bg-white rounded-2xl p-8 border border-slate-100 shadow-sm text-center group">
+                <div class="relative inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-brand-50 text-brand-600 mb-6">
+                    <i class="fas fa-heart text-2xl"></i>
+                    <span class="absolute -top-2 -right-2 h-6 w-6 rounded-full gradient-brand text-white text-xs font-bold flex items-center justify-center">2</span>
+                </div>
+                <h3 class="text-lg font-bold">Match Recommendations</h3>
+            </a>
+            <a href="#" class="card-hover bg-white rounded-2xl p-8 border border-slate-100 shadow-sm text-center group">
+                <div class="relative inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-brand-50 text-brand-600 mb-6">
+                    <i class="fas fa-comments text-2xl"></i>
+                    <span class="absolute -top-2 -right-2 h-6 w-6 rounded-full gradient-brand text-white text-xs font-bold flex items-center justify-center">3</span>
+                </div>
+                <h3 class="text-lg font-bold">Message Matches</h3>
+            </a>
+            <a href="#" class="card-hover bg-white rounded-2xl p-8 border border-slate-100 shadow-sm text-center group">
+                <div class="relative inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-brand-50 text-brand-600 mb-6">
+                    <i class="fas fa-calendar-alt text-2xl"></i>
+                    <span class="absolute -top-2 -right-2 h-6 w-6 rounded-full gradient-brand text-white text-xs font-bold flex items-center justify-center">4</span>
+                </div>
+                <h3 class="text-lg font-bold">Arrange Meetings</h3>
+            </a>
+        </div>
+    </section>
 
     <!-- Popular Profiles -->
-    <div class="container mx-auto px-6 py-8">
-        <h2 class="text-2xl font-bold text-primary mb-6 text-center">Popular Profiles</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-            <!-- Profile Card -->
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <img src="https://placehold.co/150x150?text=Demo" alt="Profile Image" class="rounded-full mx-auto mb-4">
-                <h3 class="text-lg font-semibold text-primary">Rohan Desai</h3>
-                <p class="text-gray-600">28, Engineer</p>
-                <p class="text-gray-600">New York, USA</p>
-                <button class="bg-primary text-white px-4 py-2 rounded-lg mt-4 hover:bg-opacity-90">View
-                    Profile</button>
+    <section class="bg-white border-y border-slate-100 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Popular <span class="gradient-text">Profiles</span></h2>
+                <p class="text-slate-500 text-lg">Discover thoughtfully matched profiles from our community.</p>
             </div>
-            <!-- Add more profiles similarly -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Profile Card -->
+                <div class="card-hover bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden text-center">
+                    <div class="gradient-brand h-20"></div>
+                    <div class="px-6 pb-7 -mt-12">
+                        <img src="https://placehold.co/150x150?text=Demo" alt="Profile Image" class="rounded-full h-24 w-24 mx-auto mb-4 ring-4 ring-white shadow-md object-cover">
+                        <h3 class="text-lg font-bold text-slate-900">Rohan Desai</h3>
+                        <p class="text-slate-500 mt-1"><i class="fas fa-briefcase text-brand-500 mr-1"></i> 28, Engineer</p>
+                        <p class="text-slate-500"><i class="fas fa-location-dot text-brand-500 mr-1"></i> New York, USA</p>
+                        <button class="mt-5 inline-flex items-center gap-2 gradient-brand text-white px-5 py-2.5 rounded-xl font-semibold shadow-soft hover:opacity-90 transition">View Profile</button>
+                    </div>
+                </div>
+                <!-- Add more profiles similarly -->
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- Success Stories -->
-    <div class="bg-secondary bg-opacity-20 py-12">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold text-primary mb-8">Success Stories</h2>
-            <p class="text-gray-700 mb-8">Read about the inspiring journeys of couples who found their partners through
-                our platform.</p>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="font-bold text-primary">Emily & Michael</h3>
-                    <p class="text-gray-600 mt-2">"We met through this platform, and it was an instant connection. Now,
-                        we're happily married and grateful for this service!"</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="font-bold text-primary">Rachel & Chris</h3>
-                    <p class="text-gray-600 mt-2">"A perfect match! We recommend this platform to anyone looking for a
-                        meaningful connection."</p>
-                </div>
-                <!-- Add more success stories as needed -->
-            </div>
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Success <span class="gradient-text">Stories</span></h2>
+            <p class="text-slate-500 text-lg">Read about the inspiring journeys of couples who found their partners through our platform.</p>
         </div>
-    </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="card-hover bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+                <i class="fas fa-quote-left text-3xl text-brand-200 mb-4"></i>
+                <p class="text-slate-600 leading-relaxed mb-6">"We met through this platform, and it was an instant connection. Now, we're happily married and grateful for this service!"</p>
+                <div class="flex items-center gap-3">
+                    <div class="h-11 w-11 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center"><i class="fas fa-heart"></i></div>
+                    <h3 class="font-bold text-slate-900">Emily &amp; Michael</h3>
+                </div>
+            </div>
+            <div class="card-hover bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+                <i class="fas fa-quote-left text-3xl text-brand-200 mb-4"></i>
+                <p class="text-slate-600 leading-relaxed mb-6">"A perfect match! We recommend this platform to anyone looking for a meaningful connection."</p>
+                <div class="flex items-center gap-3">
+                    <div class="h-11 w-11 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center"><i class="fas fa-heart"></i></div>
+                    <h3 class="font-bold text-slate-900">Rachel &amp; Chris</h3>
+                </div>
+            </div>
+            <!-- Add more success stories as needed -->
+        </div>
+    </section>
 
     <!-- Membership Plans -->
-    <div class="container mx-auto px-6 py-12">
-        <h2 class="text-2xl font-bold text-primary mb-6 text-center">Membership Plans</h2>
-        <div class="grid md:grid-cols-3 gap-6 text-center">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="font-bold text-xl text-primary mb-4">Basic</h3>
-                <p class="text-gray-600 mb-4">Access to limited profiles, basic matching.</p>
-                <p class="text-2xl font-bold text-primary mb-6">₹2,499/month</p>
-                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-opacity-90">Choose Plan</button>
+    <section class="bg-white border-y border-slate-100 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Membership <span class="gradient-text">Plans</span></h2>
+                <p class="text-slate-500 text-lg">Choose the plan that fits your journey to finding the perfect match.</p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="font-bold text-xl text-primary mb-4">Premium</h3>
-                <p class="text-gray-600 mb-4">Access to all profiles, advanced matching, chat options.</p>
-                <p class="text-2xl font-bold text-primary mb-6">₹4,999/month</p>
-                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-opacity-90">Choose Plan</button>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="font-bold text-xl text-primary mb-4">Elite</h3>
-                <p class="text-gray-600 mb-4">Personalized matchmaker, priority support, unlimited messaging.</p>
-                <p class="text-2xl font-bold text-primary mb-6">₹7,999/month</p>
-                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-opacity-90">Choose Plan</button>
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <!-- Basic -->
+                <div class="card-hover bg-white rounded-2xl p-8 border border-slate-100 shadow-sm text-center">
+                    <div class="h-14 w-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto mb-6"><i class="fas fa-seedling text-2xl"></i></div>
+                    <h3 class="font-bold text-xl mb-2">Basic</h3>
+                    <p class="text-slate-500 mb-6">Access to limited profiles, basic matching.</p>
+                    <p class="text-3xl font-extrabold gradient-text mb-6">₹2,499/month</p>
+                    <button class="w-full inline-flex items-center justify-center gap-2 bg-brand-50 text-brand-700 px-6 py-3 rounded-xl font-semibold hover:bg-brand-100 transition">Choose Plan</button>
+                </div>
+                <!-- Premium (Most Popular) -->
+                <div class="relative gradient-brand text-white rounded-2xl p-8 text-center shadow-soft ring-4 ring-brand-200 md:scale-105 overflow-hidden">
+                    <div class="absolute inset-0 hero-grid opacity-50"></div>
+                    <div class="relative">
+                        <span class="inline-flex items-center gap-2 bg-white/20 border border-white/30 text-white text-xs font-semibold px-3 py-1 rounded-full mb-5"><i class="fas fa-star"></i> Most Popular</span>
+                        <div class="h-14 w-14 rounded-2xl bg-white/20 text-white flex items-center justify-center mx-auto mb-6"><i class="fas fa-gem text-2xl"></i></div>
+                        <h3 class="font-bold text-xl mb-2">Premium</h3>
+                        <p class="text-white/80 mb-6">Access to all profiles, advanced matching, chat options.</p>
+                        <p class="text-3xl font-extrabold mb-6">₹4,999/month</p>
+                        <button class="w-full inline-flex items-center justify-center gap-2 bg-white text-brand-700 px-6 py-3 rounded-xl font-semibold hover:bg-slate-100 transition shadow-lg">Choose Plan</button>
+                    </div>
+                </div>
+                <!-- Elite -->
+                <div class="card-hover bg-white rounded-2xl p-8 border border-slate-100 shadow-sm text-center">
+                    <div class="h-14 w-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto mb-6"><i class="fas fa-crown text-2xl"></i></div>
+                    <h3 class="font-bold text-xl mb-2">Elite</h3>
+                    <p class="text-slate-500 mb-6">Personalized matchmaker, priority support, unlimited messaging.</p>
+                    <p class="text-3xl font-extrabold gradient-text mb-6">₹7,999/month</p>
+                    <button class="w-full inline-flex items-center justify-center gap-2 bg-brand-50 text-brand-700 px-6 py-3 rounded-xl font-semibold hover:bg-brand-100 transition">Choose Plan</button>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white mt-12">
-        <div class="container mx-auto px-6 py-12 grid md:grid-cols-3 gap-8">
+    <footer class="bg-slate-900 text-slate-300">
+        <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-10">
             <div>
-                <h4 class="text-xl font-semibold mb-4">About Us</h4>
-                <p class="text-gray-300">Building connections for a lifetime.</p>
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="inline-flex items-center justify-center h-9 w-9 rounded-lg gradient-brand text-white font-bold">C</span>
+                    <span class="text-lg font-bold text-white">Community</span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed">A modern community platform fostering meaningful connections, growth and collaboration.</p>
             </div>
             <div>
-                <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-gray-300">
-                    <li><a href="index.html" class="hover:text-white">Home</a></li>
-                    <li><a href="about.html" class="hover:text-white">About</a></li>
-                    <li><a href="services.html" class="hover:text-white">Services</a></li>
-                    <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                    <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                    <li><a href="services.html" class="hover:text-white transition">Services</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                <h4 class="text-white font-semibold mb-4">Contact</h4>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><i class="fas fa-envelope w-5 text-brand-400"></i> info@community.com</li>
+                    <li><i class="fas fa-phone w-5 text-brand-400"></i> +91 98765 43210</li>
+                    <li><i class="fas fa-location-dot w-5 text-brand-400"></i> 123 Community Street, Bengaluru</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Follow Us</h4>
+                <div class="flex gap-3">
+                    <a href="#" class="h-10 w-10 rounded-lg bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="h-10 w-10 rounded-lg bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="h-10 w-10 rounded-lg bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="h-10 w-10 rounded-lg bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
-        <div class="border-t border-brown-700 py-4 text-center text-gray-300">
-            &copy; 2024 Community. All rights reserved.
+        <div class="border-t border-slate-800 py-6 text-center text-sm text-slate-500">
+            <p>&copy; 2024 Community. All rights reserved.</p>
         </div>
     </footer>
-
 </body>
 
 </html>
