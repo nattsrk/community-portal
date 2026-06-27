@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs - Community Portal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .bg-primary {
+            background-color: #8B4513;
+        }
+
+        .bg-secondary {
+            background-color: #DEB887;
+        }
+
+        .text-primary {
+            color: #8B4513;
+        }
+
+        .hover-primary:hover {
+            background-color: #A0522D;
+        }
+
+        .border-primary {
+            border-color: #8B4513;
+        }
+
+        /* Background image for the entire page */
+        body {
+            background-image: url('/images/services.jpg');
+            /* Ensure the path is correct */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navbar Start -->
+    <nav class="bg-primary text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold">HOPE</a>
+                <!-- Hamburger Icon for Mobile -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <!-- Main Menu Links (Desktop Only) -->
+                <div id="menu" class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-gray-200">Home</a>
+                    <a href="about.html" class="hover:text-gray-200">About</a>
+                    <a href="services.html" class="hover:text-gray-200">Services</a>
+                    <a href="links.html" class="hover:text-gray-200">Resources</a>
+                    <a href="members.html" class="hover:text-gray-200">Members</a>
+                    <a href="jobs.html" class="hover:text-gray-200">Jobs</a>
+                    <a href="matrimony.html" class="hover:text-gray-200">Matrimony</a>
+                    <a href="store.html" class="hover:text-gray-200">Store</a>
+                    <a href="contact.html" class="hover:text-gray-200">Contact</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Links (Hidden by Default) -->
+            <div id="mobile-menu" class="hidden md:hidden flex flex-col mt-4 space-y-2">
+                <a href="index.html" class="hover:text-gray-200">Home</a>
+                <a href="about.html" class="hover:text-gray-200">About</a>
+                <a href="services.html" class="hover:text-gray-200">Services</a>
+                <a href="links.html" class="hover:text-gray-200">Resources</a>
+                <a href="members.html" class="hover:text-gray-200">Members</a>
+                <a href="jobs.html" class="hover:text-gray-200">Jobs</a>
+                <a href="matrimony.html" class="hover:text-gray-200">Matrimony</a>
+                <a href="store.html" class="hover:text-gray-200">Store</a>
+                <a href="contact.html" class="hover:text-gray-200">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+    <!-- Navbar End -->
+
+    <!-- Rest of the Content -->
+
+    <!-- Search Section -->
+    <div class="bg-primary py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl font-bold text-white mb-8 text-center">Find Your Dream Job</h1>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div>
+                            <input type="text" placeholder="Job Title, Skills, or Company"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Location"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <button class="w-full bg-primary text-white px-6 py-2 rounded-lg hover:bg-opacity-90">Search
+                                Jobs</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="container mx-auto px-6 py-8">
+        <div class="grid md:grid-cols-4 gap-4">
+            <a href="#" class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow flex items-center">
+                <i class="fas fa-upload text-primary mr-3"></i>
+                <span>Upload Resume</span>
+            </a>
+            <a href="#" class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow flex items-center">
+                <i class="fas fa-bell text-primary mr-3"></i>
+                <span>Job Alerts</span>
+            </a>
+            <a href="#" class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow flex items-center">
+                <i class="fas fa-user text-primary mr-3"></i>
+                <span>My Profile</span>
+            </a>
+            <a href="#" class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow flex items-center">
+                <i class="fas fa-briefcase text-primary mr-3"></i>
+                <span>Applied Jobs</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Featured Jobs Section -->
+    <div class="container mx-auto px-6 py-8">
+        <h2 class="text-2xl font-bold text-primary mb-6">Featured Jobs</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Job Card 1 -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Senior Software Engineer</h3>
+                        <p class="text-primary mb-2">TechCorp Solutions</p>
+                        <div class="flex items-center text-gray-600 text-sm mb-2">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>New York, NY</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 text-sm mb-4">
+                            <i class="fas fa-briefcase mr-2"></i>
+                            <span>5-8 years</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-secondary bg-opacity-20 px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="bg-secondary bg-opacity-20 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-secondary bg-opacity-20 px-3 py-1 rounded-full text-sm">React</span>
+                        </div>
+                    </div>
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90">Apply</button>
+                </div>
+            </div>
+
+            <!-- Job Card 2 -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Product Manager</h3>
+                        <p class="text-primary mb-2">Innovation Labs</p>
+                        <div class="flex items-center text-gray-600 text-sm mb-2">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>San Francisco, CA</span>
+                        </div>
+                        <div class="flex items-center text-gray-600 text-sm mb-4">
+                            <i class="fas fa-briefcase mr-2"></i>
+                            <span>3-5 years</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-secondary bg-opacity-20 px-3 py-1 rounded-full text-sm">Agile</span>
+                            <span class="bg-secondary bg-opacity-20 px-3 py-1 rounded-full text-sm">Scrum</span>
+                            <span class="bg-secondary bg-opacity-20 px-3 py-1 rounded-full text-sm">Product
+                                Strategy</span>
+                        </div>
+                    </div>
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Remaining Sections and Footer Here (no changes needed) -->
+</body>
+
+</html>

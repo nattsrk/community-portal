@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Community Portal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .bg-primary {
+            background-color: #8B4513;
+        }
+
+        .bg-secondary {
+            background-color: #DEB887;
+        }
+
+        .text-primary {
+            color: #8B4513;
+        }
+
+        .hover-primary:hover {
+            background-color: #A0522D;
+        }
+
+        .border-primary {
+            border-color: #8B4513;
+        }
+
+        /* Background image for the entire page */
+        body {
+            background-image: url('/images/services.jpg');
+            /* Ensure the path is correct */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navbar Start -->
+    <nav class="bg-primary text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo Section -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="/Users/radjan/Community Portal/images/ccplogo.jpg" alt="CommunityHub Logo" class="h-10 w-10">
+                <span class="text-2xl font-bold">HOPE</span>
+            </a>
+
+            <!-- Hamburger Icon for Mobile -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Main Menu Links (Desktop Only) -->
+            <div id="menu" class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-gray-200">Home</a>
+                <a href="about.html" class="hover:text-gray-200">About</a>
+                <a href="services.html" class="hover:text-gray-200">Services</a>
+                <a href="links.html" class="hover:text-gray-200">Resources</a>
+                <a href="members.html" class="hover:text-gray-200">Members</a>
+                <a href="jobs.html" class="hover:text-gray-200">Jobs</a>
+                <a href="matrimony.html" class="hover:text-gray-200">Matrimony</a>
+                <a href="store.html" class="hover:text-gray-200">Store</a>
+                <a href="contact.html" class="hover:text-gray-200">Contact</a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Links (Hidden by Default) -->
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col mt-4 space-y-2 bg-primary px-6 py-4">
+            <a href="index.html" class="hover:text-gray-200">Home</a>
+            <a href="about.html" class="hover:text-gray-200">About</a>
+            <a href="services.html" class="hover:text-gray-200">Services</a>
+            <a href="links.html" class="hover:text-gray-200">Resources</a>
+            <a href="members.html" class="hover:text-gray-200">Members</a>
+            <a href="jobs.html" class="hover:text-gray-200">Jobs</a>
+            <a href="matrimony.html" class="hover:text-gray-200">Matrimony</a>
+            <a href="store.html" class="hover:text-gray-200">Store</a>
+            <a href="contact.html" class="hover:text-gray-200">Contact</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+    <!-- Navbar End -->
+
+    <!-- Services Content -->
+    <div class="container mx-auto px-6 py-12">
+        <h1 class="text-4xl font-bold text-primary mb-8">Our Services</h1>
+
+        <!-- Main Services -->
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <i class="fas fa-users-cog text-primary text-4xl mb-4"></i>
+                <h3 class="text-xl font-bold text-primary mb-2">Membership Management</h3>
+                <p class="text-gray-600 mb-4">Comprehensive tools for managing your community membership and engagement.
+                </p>
+                <ul class="space-y-2 text-gray-700">
+                    <li><i class="fas fa-check text-primary mr-2"></i>Member Profiles</li>
+                    <li><i class="fas fa-check text-primary mr-2"></i>Activity Tracking</li>
+                    <li><i class="fas fa-check text-primary mr-2"></i>Communication Tools</li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <i class="fas fa-calendar-alt text-primary text-4xl mb-4"></i>
+                <h3 class="text-xl font-bold text-primary mb-2">Event Planning</h3>
+                <p class="text-gray-600 mb-4">Complete event management solution for community gatherings.</p>
+                <ul class="space-y-2 text-gray-700">
+                    <li><i class="fas fa-check text-primary mr-2"></i>Event Calendar</li>
+                    <li><i class="fas fa-check text-primary mr-2"></i>Registration System</li>
+                    <li><i class="fas fa-check text-primary mr-2"></i>Attendance Tracking</li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <i class="fas fa-comments text-primary text-4xl mb-4"></i>
+                <h3 class="text-xl font-bold text-primary mb-2">Discussion Forums</h3>
+                <p class="text-gray-600 mb-4">Engage with community members through structured discussions.</p>
+                <ul class="space-y-2 text-gray-700">
+                    <li><i class="fas fa-check text-primary mr-2"></i>Topic Categories</li>
+                    <li><i class="fas fa-check text-primary mr-2"></i>Moderation Tools</li>
+                    <li><i class="fas fa-check text-primary mr-2"></i>Search Function</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Additional Services -->
+        <div class="bg-secondary bg-opacity-20 rounded-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-primary mb-6">Additional Services</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="flex items-start">
+                    <i class="fas fa-chart-bar text-primary text-2xl mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-bold text-primary mb-2">Analytics & Reporting</h3>
+                        <p class="text-gray-700">Detailed insights into community engagement and growth metrics.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <i class="fas fa-envelope text-primary text-2xl mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-bold text-primary mb-2">Newsletter Management</h3>
+                        <p class="text-gray-700">Create and distribute engaging newsletters to your community.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Plans -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold text-primary mb-8 text-center">Service Plans</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-primary mb-4">Basic</h3>
+                    <p class="text-3xl font-bold mb-4">Free<span class="text-sm text-gray-600">/month</span></p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fas fa-check text-primary mr-2"></i>Access to Forums</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i>Event Notifications</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-primary mb-4">Standard</h3>
+                    <p class="text-3xl font-bold mb-4">Rs 500<span class="text-sm text-gray-600">/month</span></p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fas fa-check text-primary mr-2"></i>Basic Features</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i>Member Directory Access</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i>Priority Support</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-primary mb-4">Premium</h3>
+                    <p class="text-3xl font-bold mb-4">Rs 1500<span class="text-sm text-gray-600">/month</span></p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fas fa-check text-primary mr-2"></i>All Features</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i>Advanced Analytics</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i>Dedicated Support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white mt-12">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">About Us</h4>
+                    <p class="text-gray-300">A community-driven platform fostering connections and growth.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                        <li><a href="services.html" class="hover:text-white">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Email: info@hope.com</li>
+                        <li>Phone: +91 9992229992</li>
+                        <li>Address: 123 Community St</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-brown-700 py-4">
+            <div class="container mx-auto px-6 text-center text-gray-300">
+                <p>&copy; 2024 HOPE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

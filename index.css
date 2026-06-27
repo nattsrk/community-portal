@@ -1,0 +1,201 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.bg-primary {
+    background-color: #8B4513;
+}
+
+.bg-secondary {
+    background-color: #DEB887;
+}
+
+.text-primary {
+    color: #8B4513;
+}
+
+.border-primary {
+    border-color: #8B4513;
+}
+
+/* Navbar Styles */
+nav {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+nav button {
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #A0522D;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: linear-gradient(rgba(139, 69, 19, 0.7), rgba(139, 69, 19, 0.7)), url('hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.hero-section button {
+    background-color: #fff;
+    color: #8B4513;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero-section button:hover {
+    background-color: #DEB887;
+}
+
+/* Features Section */
+.features-section {
+    padding: 60px 0;
+}
+
+.features-section h3 {
+    color: #8B4513;
+    transition: color 0.3s ease;
+}
+
+.features-section .feature-card:hover h3 {
+    color: #A0522D;
+}
+
+.features-section .feature-card i {
+    font-size: 2.5rem;
+    color: #8B4513;
+    transition: transform 0.3s ease;
+}
+
+.features-section .feature-card:hover i {
+    transform: scale(1.1);
+}
+
+.features-section .feature-card {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Metrics Section */
+.metrics-section {
+    background-color: #DEB887;
+    padding: 60px 0;
+    text-align: center;
+    color: #8B4513;
+}
+
+.metrics-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.metrics-section .metric {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.metrics-section .metric:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Events Section */
+.events-section {
+    padding: 60px 0;
+}
+
+.events-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.events-section .event-card {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.events-section .event-card:hover {
+    transform: scale(1.02);
+}
+
+.events-section .event-card h3 {
+    font-size: 1.5rem;
+    color: #8B4513;
+}
+
+.events-section .event-card p {
+    color: #666;
+}
+
+.events-section .event-card button {
+    color: #8B4513;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.events-section .event-card button:hover {
+    color: #A0522D;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #8B4513;
+    color: #fff;
+    padding: 40px 0;
+}
+
+footer a:hover {
+    color: #DEB887;
+    text-decoration: underline;
+}
+
+footer .social-icons i {
+    font-size: 1.5rem;
+    color: #DEB887;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons i:hover {
+    color: #fff;
+}
+
+footer p {
+    color: #ccc;
+}

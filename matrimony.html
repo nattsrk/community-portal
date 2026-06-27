@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrimony - HOPE Portal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .bg-primary {
+            background-color: #8B4513;
+        }
+
+        .bg-secondary {
+            background-color: #DEB887;
+        }
+
+        .text-primary {
+            color: #8B4513;
+        }
+
+        .hover-primary:hover {
+            background-color: #A0522D;
+        }
+
+        .border-primary {
+            border-color: #8B4513;
+        }
+
+        /* Background image for the entire page */
+        body {
+            background-image: url('/images/services.jpg');
+            /* Ensure the path is correct */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navbar Start -->
+    <nav class="bg-primary text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold">HOPE</a>
+                <!-- Hamburger Icon for Mobile -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <!-- Main Menu Links (Desktop Only) -->
+                <div id="menu" class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-gray-200">Home</a>
+                    <a href="about.html" class="hover:text-gray-200">About</a>
+                    <a href="services.html" class="hover:text-gray-200">Services</a>
+                    <a href="links.html" class="hover:text-gray-200">Resources</a>
+                    <a href="members.html" class="hover:text-gray-200">Members</a>
+                    <a href="jobs.html" class="hover:text-gray-200">Jobs</a>
+                    <a href="matrimony.html" class="hover:text-gray-200">Matrimony</a>
+                    <a href="store.html" class="hover:text-gray-200">Store</a>
+                    <a href="contact.html" class="hover:text-gray-200">Contact</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Links (Hidden by Default) -->
+            <div id="mobile-menu" class="hidden md:hidden flex flex-col mt-4 space-y-2">
+                <a href="index.html" class="hover:text-gray-200">Home</a>
+                <a href="about.html" class="hover:text-gray-200">About</a>
+                <a href="services.html" class="hover:text-gray-200">Services</a>
+                <a href="links.html" class="hover:text-gray-200">Resources</a>
+                <a href="members.html" class="hover:text-gray-200">Members</a>
+                <a href="jobs.html" class="hover:text-gray-200">Jobs</a>
+                <a href="matrimony.html" class="hover:text-gray-200">Matrimony</a>
+                <a href="store.html" class="hover:text-gray-200">Store</a>
+                <a href="contact.html" class="hover:text-gray-200">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+    <!-- Navbar End -->
+
+    <!-- Matrimony Header -->
+    <div class="bg-primary py-12 text-center text-white">
+        <h1 class="text-4xl font-bold">Find Your Perfect Match</h1>
+        <p class="text-lg mt-2">Join our matrimony service to connect with your life partner</p>
+    </div>
+
+    <!-- Search Section -->
+    <div class="container mx-auto px-6 py-12">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="grid md:grid-cols-3 gap-4">
+                <input type="text" placeholder="Search by Name"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                <input type="text" placeholder="Search by Age"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-opacity-90">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Matrimony Services Links -->
+    <div class="container mx-auto px-6 py-8 grid md:grid-cols-4 gap-6 text-center">
+        <a href="#" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <i class="fas fa-user-plus text-primary text-3xl mb-4"></i>
+            <p>Register Profile</p>
+        </a>
+        <a href="#" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <i class="fas fa-heart text-primary text-3xl mb-4"></i>
+            <p>Match Recommendations</p>
+        </a>
+        <a href="#" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <i class="fas fa-comments text-primary text-3xl mb-4"></i>
+            <p>Message Matches</p>
+        </a>
+        <a href="#" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <i class="fas fa-calendar-alt text-primary text-3xl mb-4"></i>
+            <p>Arrange Meetings</p>
+        </a>
+    </div>
+
+    <!-- Popular Profiles -->
+    <div class="container mx-auto px-6 py-8">
+        <h2 class="text-2xl font-bold text-primary mb-6 text-center">Popular Profiles</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Profile Card -->
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <img src="https://placehold.co/150x150?text=Demo" alt="Profile Image" class="rounded-full mx-auto mb-4">
+                <h3 class="text-lg font-semibold text-primary">Alex Johnson</h3>
+                <p class="text-gray-600">28, Engineer</p>
+                <p class="text-gray-600">New York, USA</p>
+                <button class="bg-primary text-white px-4 py-2 rounded-lg mt-4 hover:bg-opacity-90">View
+                    Profile</button>
+            </div>
+            <!-- Add more profiles similarly -->
+        </div>
+    </div>
+
+    <!-- Success Stories -->
+    <div class="bg-secondary bg-opacity-20 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-primary mb-8">Success Stories</h2>
+            <p class="text-gray-700 mb-8">Read about the inspiring journeys of couples who found their partners through
+                our platform.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-primary">Emily & Michael</h3>
+                    <p class="text-gray-600 mt-2">"We met through this platform, and it was an instant connection. Now,
+                        we're happily married and grateful for this service!"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-primary">Rachel & Chris</h3>
+                    <p class="text-gray-600 mt-2">"A perfect match! We recommend this platform to anyone looking for a
+                        meaningful connection."</p>
+                </div>
+                <!-- Add more success stories as needed -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Membership Plans -->
+    <div class="container mx-auto px-6 py-12">
+        <h2 class="text-2xl font-bold text-primary mb-6 text-center">Membership Plans</h2>
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="font-bold text-xl text-primary mb-4">Basic</h3>
+                <p class="text-gray-600 mb-4">Access to limited profiles, basic matching.</p>
+                <p class="text-2xl font-bold text-primary mb-6">$29/month</p>
+                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-opacity-90">Choose Plan</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="font-bold text-xl text-primary mb-4">Premium</h3>
+                <p class="text-gray-600 mb-4">Access to all profiles, advanced matching, chat options.</p>
+                <p class="text-2xl font-bold text-primary mb-6">$59/month</p>
+                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-opacity-90">Choose Plan</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="font-bold text-xl text-primary mb-4">Elite</h3>
+                <p class="text-gray-600 mb-4">Personalized matchmaker, priority support, unlimited messaging.</p>
+                <p class="text-2xl font-bold text-primary mb-6">$99/month</p>
+                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-opacity-90">Choose Plan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white mt-12">
+        <div class="container mx-auto px-6 py-12 grid md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-xl font-semibold mb-4">About Us</h4>
+                <p class="text-gray-300">Building connections for a lifetime.</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-gray-300">
+                    <li><a href="index.html" class="hover:text-white">Home</a></li>
+                    <li><a href="about.html" class="hover:text-white">About</a></li>
+                    <li><a href="services.html" class="hover:text-white">Services</a></li>
+                    <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-brown-700 py-4 text-center text-gray-300">
+            &copy; 2024 HOPE. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>

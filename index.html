@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOPE Portal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .bg-primary {
+            background-color: #8B4513;
+        }
+
+        .bg-secondary {
+            background-color: #DEB887;
+        }
+
+        .text-primary {
+            color: #8B4513;
+        }
+
+        .hover-primary:hover {
+            background-color: #A0522D;
+        }
+
+        .border-primary {
+            border-color: #8B4513;
+        }
+
+        /* Background image for the entire page */
+        body {
+            background-image: url('/images/background.jpg');
+            /* Ensure the path is correct */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navbar Start -->
+    <nav class="bg-primary text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo Section -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="/images/ccplogo.jpg" alt="CommunityHub Logo" class="h-10 w-10">
+                <span class="text-2xl font-bold">HOPE</span>
+            </a>
+
+            <!-- Hamburger Icon for Mobile -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Main Menu Links (Desktop Only) -->
+            <div id="menu" class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-gray-200">Home</a>
+                <a href="about.html" class="hover:text-gray-200">About</a>
+                <a href="services.html" class="hover:text-gray-200">Services</a>
+                <a href="links.html" class="hover:text-gray-200">Resources</a>
+                <a href="members.html" class="hover:text-gray-200">Members</a>
+                <a href="jobs.html" class="hover:text-gray-200">Jobs</a>
+                <a href="matrimony.html" class="hover:text-gray-200">Matrimony</a>
+                <a href="store.html" class="hover:text-gray-200">Store</a>
+                <a href="contact.html" class="hover:text-gray-200">Contact</a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Links (Hidden by Default) -->
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col mt-4 space-y-2 bg-primary px-6 py-4">
+            <a href="index.html" class="hover:text-gray-200">Home</a>
+            <a href="about.html" class="hover:text-gray-200">About</a>
+            <a href="services.html" class="hover:text-gray-200">Services</a>
+            <a href="links.html" class="hover:text-gray-200">Resources</a>
+            <a href="members.html" class="hover:text-gray-200">Members</a>
+            <a href="jobs.html" class="hover:text-gray-200">Jobs</a>
+            <a href="matrimony.html" class="hover:text-gray-200">Matrimony</a>
+            <a href="store.html" class="hover:text-gray-200">Store</a>
+            <a href="contact.html" class="hover:text-gray-200">Contact</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <div class="bg-primary bg-opacity-75 text-white py-3">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-4">Welcome to HOPE Christian Community</h1>
+            <p class="text-xl mb-9">"Growing in faith and spiritual maturity is a journey that begins today."</p>
+            <button class="bg-white text-primary px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-100">
+                Register Now
+            </button>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Member Directory -->
+            <div class="bg-white rounded-lg p-8 shadow-md flex flex-col items-center">
+                <img src="/images/members.jpg" alt="Member Directory" class="w-62 h-34 mb-4">
+                <i class="fas fa-users text-4xl text-primary mb-4"></i>
+                <h3 class="text-2xl font-semibold mb-4">Member Directory</h3>
+                <p class="text-gray-600 text-center">Connect with other members and grow your network.</p>
+            </div>
+
+            <!-- Events -->
+            <div class="bg-white rounded-lg p-8 shadow-md flex flex-col items-center">
+                <img src="/images/service2.jpg" alt="Member Directory" class="w-62 h-34 mb-4">
+                <i class="fas fa-calendar-alt text-4xl text-primary mb-4"></i>
+                <h3 class="text-2xl font-semibold mb-4">Events</h3>
+                <p class="text-gray-600 text-center">Discover and participate in community events.</p>
+            </div>
+
+            <!-- Discussion Forums -->
+            <div class="bg-white rounded-lg p-8 shadow-md flex flex-col items-center">
+                <img src="/images/service3.jpg" alt="Member Directory" class="w-62 h-34 mb-4">
+                <i class="fas fa-comments text-4xl text-primary mb-4"></i>
+                <h3 class="text-2xl font-semibold mb-4">Discussion Forums</h3>
+                <p class="text-gray-600 text-center">Engage in meaningful conversations.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Metrics Section -->
+    <div class="bg-secondary bg-opacity-20 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Community Metrics</h2>
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">5,000+</div>
+                    <div class="text-gray-600">Active Members</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">200+</div>
+                    <div class="text-gray-600">Monthly Events</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">50+</div>
+                    <div class="text-gray-600">Discussion Groups</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-primary mb-2">95%</div>
+                    <div class="text-gray-600">Member Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Latest Events Section -->
+    <div class="container mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-primary mb-8">Upcoming Events</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="p-6">
+                    <div class="text-primary font-bold mb-2">OCT 30</div>
+                    <h3 class="font-bold text-xl mb-2">Community Meetup</h3>
+                    <p class="text-gray-600 mb-4">Join us for our monthly community gathering</p>
+                    <button class="text-primary font-semibold hover:underline">Learn More →</button>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="p-6">
+                    <div class="text-primary font-bold mb-2">NOV 5</div>
+                    <h3 class="font-bold text-xl mb-2">Workshop Series</h3>
+                    <p class="text-gray-600 mb-4">Skills development workshop for members</p>
+                    <button class="text-primary font-semibold hover:underline">Learn More →</button>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="p-6">
+                    <div class="text-primary font-bold mb-2">NOV 12</div>
+                    <h3 class="font-bold text-xl mb-2">Networking Event</h3>
+                    <p class="text-gray-600 mb-4">Connect with professionals in your field</p>
+                    <button class="text-primary font-semibold hover:underline">Learn More →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white mt-12">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">About Us</h4>
+                    <p class="text-gray-300">A community-driven platform fostering connections and growth.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                        <li><a href="services.html" class="hover:text-white">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Email: info@hope.com</li>
+                        <li>Phone: (555) 123-4567</li>
+                        <li>Address: 123 Community St</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-brown-700 py-4">
+            <div class="container mx-auto px-6 text-center text-gray-300">
+                <p>&copy; 2024 HOPE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!-- Navbar HTML with Toggle Script -->
+<nav class="bg-primary text-white shadow-lg">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold">CommunityHub</a>
+
+            <!-- Hamburger Icon for Mobile -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Main Menu Links (Desktop Only) -->
+            <div id="menu" class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="hover:text-gray-200">Home</a>
+                <a href="about.html" class="hover:text-gray-200">About</a>
+                <a href="services.html" class="hover:text-gray-200">Services</a>
+                <a href="links.html" class="hover:text-gray-200">Resources</a>
+                <a href="members.html" class="hover:text-gray-200">Members</a>
+                <a href="jobs.html" class="hover:text-gray-200">Jobs</a>
+                <a href="matrimony.html" class="hover:text-gray-200">Matrimony</a>
+                <a href="store.html" class="hover:text-gray-200">Store</a>
+                <a href="contact.html" class="hover:text-gray-200">Contact</a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Links (Hidden by Default) -->
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col mt-4 space-y-2">
+            <a href="index.html" class="hover:text-gray-200">Home</a>
+            <a href="about.html" class="hover:text-gray-200">About</a>
+            <a href="services.html" class="hover:text-gray-200">Services</a>
+            <a href="links.html" class="hover:text-gray-200">Resources</a>
+            <a href="members.html" class="hover:text-gray-200">Members</a>
+            <a href="jobs.html" class="hover:text-gray-200">Jobs</a>
+            <a href="matrimony.html" class="hover:text-gray-200">Matrimony</a>
+            <a href="store.html" class="hover:text-gray-200">Store</a>
+            <a href="contact.html" class="hover:text-gray-200">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- JavaScript for Mobile Menu Toggle -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    });
+</script>

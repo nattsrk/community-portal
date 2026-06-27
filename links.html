@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Community Portal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .bg-primary {
+            background-color: #8B4513;
+        }
+
+        .bg-secondary {
+            background-color: #DEB887;
+        }
+
+        .text-primary {
+            color: #8B4513;
+        }
+
+        .hover-primary:hover {
+            background-color: #A0522D;
+        }
+
+        .border-primary {
+            border-color: #8B4513;
+        }
+
+        /* Background image for the entire page */
+        body {
+            background-image: url('/images/services.jpg');
+            /* Ensure the path is correct */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navbar Start -->
+    <nav class="bg-primary text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold">HOPE</a>
+                <!-- Hamburger Icon for Mobile -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <!-- Main Menu Links (Desktop Only) -->
+                <div id="menu" class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-gray-200">Home</a>
+                    <a href="about.html" class="hover:text-gray-200">About</a>
+                    <a href="services.html" class="hover:text-gray-200">Services</a>
+                    <a href="links.html" class="hover:text-gray-200">Resources</a>
+                    <a href="members.html" class="hover:text-gray-200">Members</a>
+                    <a href="jobs.html" class="hover:text-gray-200">Jobs</a>
+                    <a href="matrimony.html" class="hover:text-gray-200">Matrimony</a>
+                    <a href="store.html" class="hover:text-gray-200">Store</a>
+                    <a href="contact.html" class="hover:text-gray-200">Contact</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Links (Hidden by Default) -->
+            <div id="mobile-menu" class="hidden md:hidden flex flex-col mt-4 space-y-2">
+                <a href="index.html" class="hover:text-gray-200">Home</a>
+                <a href="about.html" class="hover:text-gray-200">About</a>
+                <a href="services.html" class="hover:text-gray-200">Services</a>
+                <a href="links.html" class="hover:text-gray-200">Resources</a>
+                <a href="members.html" class="hover:text-gray-200">Members</a>
+                <a href="jobs.html" class="hover:text-gray-200">Jobs</a>
+                <a href="matrimony.html" class="hover:text-gray-200">Matrimony</a>
+                <a href="store.html" class="hover:text-gray-200">Store</a>
+                <a href="contact.html" class="hover:text-gray-200">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+    <!-- Navbar End -->
+
+    <!-- Resources Content -->
+    <div class="container mx-auto px-6 py-12">
+        <h1 class="text-4xl font-bold text-primary mb-8">Community Resources</h1>
+
+        <!-- Categories Section -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <!-- Educational Resources -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-primary mb-4">Educational Resources</h2>
+                <ul class="space-y-4">
+                    <li class="border-b border-gray-200 pb-2">
+                        <a href="#" class="flex items-center text-gray-700 hover:text-primary">
+                            <i class="fas fa-book mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold">Community Guidelines</h3>
+                                <p class="text-sm text-gray-600">Essential reading for all community members</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="border-b border-gray-200 pb-2">
+                        <a href="#" class="flex items-center text-gray-700 hover:text-primary">
+                            <i class="fas fa-graduation-cap mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold">Online Courses</h3>
+                                <p class="text-sm text-gray-600">Free courses for skill development</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="border-b border-gray-200 pb-2">
+                        <a href="#" class="flex items-center text-gray-700 hover:text-primary">
+                            <i class="fas fa-video mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold">Tutorial Videos</h3>
+                                <p class="text-sm text-gray-600">Step-by-step video guides</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Community Documents -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold text-primary mb-4">Community Documents</h2>
+                <ul class="space-y-4">
+                    <li class="border-b border-gray-200 pb-2">
+                        <a href="#" class="flex items-center text-gray-700 hover:text-primary">
+                            <i class="fas fa-file-alt mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold">Meeting Minutes</h3>
+                                <p class="text-sm text-gray-600">Records of community meetings</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="border-b border-gray-200 pb-2">
+                        <a href="#" class="flex items-center text-gray-700 hover:text-primary">
+                            <i class="fas fa-clipboard-list mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold">Project Reports</h3>
+                                <p class="text-sm text-gray-600">Detailed reports on community projects</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="border-b border-gray-200 pb-2">
+                        <a href="#" class="flex items-center text-gray-700 hover:text-primary">
+                            <i class="fas fa-archive mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold">Archived Newsletters</h3>
+                                <p class="text-sm text-gray-600">Previous issues of our community newsletter</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white mt-12">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">About Us</h4>
+                    <p class="text-gray-300">A community-driven platform fostering connections and growth.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                        <li><a href="services.html" class="hover:text-white">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Email: info@hope.com</li>
+                        <li>Phone: (555) 123-4567</li>
+                        <li>Address: 123 Community St</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-brown-700 py-4">
+            <div class="container mx-auto px-6 text-center text-gray-300">
+                <p>&copy; 2024 HOPE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
