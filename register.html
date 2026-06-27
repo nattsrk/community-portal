@@ -5,149 +5,253 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Community Portal</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' }
+                    },
+                    fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+                    boxShadow: { soft: '0 10px 30px -12px rgba(79,70,229,0.35)' }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <style>
-        .bg-primary {
-            background-color: #8B4513;
-        }
-
-        .bg-secondary {
-            background-color: #DEB887;
-        }
-
-        .text-primary {
-            color: #8B4513;
-        }
-
-        .hover-primary:hover {
-            background-color: #A0522D;
-        }
-
-        .border-primary {
-            border-color: #8B4513;
-        }
-
-        /* Background image for the entire page */
-        body {
-            background-image: url('/images/register-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
-        /* Enhanced styling for registration container */
-        .register-container {
-            background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
-            border: 1px solid #8B4513;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease;
-        }
-
-        .register-container:hover {
-            transform: translateY(-5px);
-        }
-
-        .register-btn {
-            background-color: #8B4513;
-            color: white;
-            padding: 0.75rem;
-            border-radius: 8px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .register-btn:hover {
-            background-color: #A0522D;
-            transform: scale(1.05);
-        }
-
-        input,
-        select {
-            border-radius: 6px;
-            border: 1px solid #ddd;
-            padding: 0.5rem;
-            width: 100%;
-            transition: box-shadow 0.3s ease;
-        }
-
-        input:focus,
-        select:focus {
-            box-shadow: 0 0 5px rgba(139, 69, 19, 0.5);
-            border-color: #8B4513;
-        }
-
-        /* Error message styling */
-        .error-message {
-            color: red;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        .gradient-brand { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #9333ea 100%); }
+        .gradient-text { background: linear-gradient(135deg, #4f46e5, #9333ea); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -16px rgba(79,70,229,.35); }
+        .glass { background: rgba(255,255,255,.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .nav-link { position: relative; color: #334155; font-weight: 500; transition: color .2s; }
+        .nav-link:hover { color: #4f46e5; }
+        .nav-link::after { content: ''; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0; background: #4f46e5; transition: width .25s; }
+        .nav-link:hover::after { width: 100%; }
+        .hero-grid { background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.18) 1px, transparent 0); background-size: 32px 32px; }
     </style>
 </head>
 
-<body class="bg-gray-50">
-    <nav class="bg-primary text-white shadow-lg">
-        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold">Community</a>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="index.html" class="hover:text-gray-200">Home</a>
-                <a href="about.html" class="hover:text-gray-200">About</a>
-                <a href="services.html" class="hover:text-gray-200">Services</a>
-                <a href="contact.html" class="hover:text-gray-200">Contact</a>
+<body class="bg-slate-50">
+    <!-- Navbar Start -->
+    <header class="sticky top-0 z-50 glass border-b border-slate-200/60">
+        <nav class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-2">
+                    <span class="inline-flex items-center justify-center h-10 w-10 rounded-xl gradient-brand text-white font-bold text-lg shadow-soft">C</span>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900">Community</span>
+                </a>
+                <div class="hidden lg:flex items-center gap-7">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="links.html" class="nav-link">Resources</a>
+                    <a href="members.html" class="nav-link">Members</a>
+                    <a href="jobs.html" class="nav-link">Jobs</a>
+                    <a href="matrimony.html" class="nav-link">Matrimony</a>
+                    <a href="store.html" class="nav-link">Store</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="hidden lg:block">
+                    <a href="register.html" class="inline-flex items-center gap-2 gradient-brand text-white px-5 py-2.5 rounded-xl font-semibold shadow-soft hover:opacity-90 transition">Register</a>
+                </div>
+                <button id="menu-toggle" class="lg:hidden text-slate-700 text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-4 flex-col gap-3">
+            <a href="index.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Home</a>
+            <a href="about.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">About</a>
+            <a href="services.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Services</a>
+            <a href="links.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Resources</a>
+            <a href="members.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Members</a>
+            <a href="jobs.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Jobs</a>
+            <a href="matrimony.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Matrimony</a>
+            <a href="store.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Store</a>
+            <a href="contact.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Contact</a>
+            <a href="register.html" class="gradient-brand text-white text-center px-5 py-2.5 rounded-xl font-semibold mt-2">Register</a>
+        </div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var t = document.getElementById('menu-toggle'), m = document.getElementById('mobile-menu');
+            if (t && m) t.addEventListener('click', function () { m.classList.toggle('hidden'); m.classList.toggle('flex'); });
+        });
+    </script>
+    <!-- Navbar End -->
+
+    <!-- Register Section -->
+    <main class="relative overflow-hidden">
+        <div class="absolute top-0 inset-x-0 h-72 gradient-brand"></div>
+        <div class="absolute top-0 inset-x-0 h-72 hero-grid opacity-50"></div>
+
+        <section class="relative max-w-6xl mx-auto px-6 py-16 md:py-20">
+            <div class="text-center text-white max-w-2xl mx-auto mb-10">
+                <span class="inline-flex items-center gap-2 bg-white/15 border border-white/20 text-white/90 text-sm font-medium px-4 py-1.5 rounded-full mb-5">
+                    <i class="fas fa-user-plus"></i> Join the community
+                </span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-3">Register Now</h1>
+                <p class="text-white/80 text-lg">Create your free account and start connecting with members today.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-soft border border-slate-100 overflow-hidden grid lg:grid-cols-2">
+                <!-- Promo Panel -->
+                <div class="relative gradient-brand text-white p-10 md:p-12 hidden lg:flex flex-col justify-between overflow-hidden">
+                    <div class="absolute inset-0 hero-grid opacity-50"></div>
+                    <div class="relative">
+                        <span class="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-white/15 border border-white/20 text-2xl mb-6"><i class="fas fa-people-group"></i></span>
+                        <h2 class="text-3xl font-extrabold leading-tight mb-4">Be part of something<br>bigger.</h2>
+                        <p class="text-white/80 leading-relaxed mb-8">Unlock the full community portal — connect with members, discover events and grow your network.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="mt-0.5 inline-flex items-center justify-center h-7 w-7 rounded-lg bg-white/15 text-sm shrink-0"><i class="fas fa-check"></i></span>
+                                <span class="text-white/90">Access the full member directory</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="mt-0.5 inline-flex items-center justify-center h-7 w-7 rounded-lg bg-white/15 text-sm shrink-0"><i class="fas fa-check"></i></span>
+                                <span class="text-white/90">Join events, jobs &amp; discussions</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="mt-0.5 inline-flex items-center justify-center h-7 w-7 rounded-lg bg-white/15 text-sm shrink-0"><i class="fas fa-check"></i></span>
+                                <span class="text-white/90">Volunteer and give back to the community</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="relative mt-10 flex items-center gap-3 bg-white/10 border border-white/15 rounded-2xl p-4">
+                        <i class="fas fa-shield-halved text-xl text-white/90"></i>
+                        <p class="text-sm text-white/80">Your details stay private. This is a demo — no data is stored.</p>
+                    </div>
+                </div>
+
+                <!-- Form Panel -->
+                <div class="p-8 md:p-12">
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-extrabold mb-1">Create your account</h2>
+                        <p class="text-slate-500">It only takes a minute to get started.</p>
+                    </div>
+
+                    <form id="registerForm" class="space-y-5">
+                        <div>
+                            <label for="username" class="text-sm font-medium text-slate-700">Username</label>
+                            <div class="relative mt-1.5">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400"><i class="fas fa-user"></i></span>
+                                <input type="text" id="username" name="username" required
+                                    class="rounded-xl border border-slate-200 pl-11 pr-4 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none w-full"
+                                    placeholder="Enter your username">
+                            </div>
+                            <p class="text-sm text-red-500 mt-1" id="usernameError"></p>
+                        </div>
+
+                        <div>
+                            <label for="email" class="text-sm font-medium text-slate-700">Email</label>
+                            <div class="relative mt-1.5">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400"><i class="fas fa-envelope"></i></span>
+                                <input type="email" id="email" name="email" required
+                                    class="rounded-xl border border-slate-200 pl-11 pr-4 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none w-full"
+                                    placeholder="Enter your email">
+                            </div>
+                            <p class="text-sm text-red-500 mt-1" id="emailError"></p>
+                        </div>
+
+                        <div>
+                            <label for="password" class="text-sm font-medium text-slate-700">Password</label>
+                            <div class="relative mt-1.5">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400"><i class="fas fa-lock"></i></span>
+                                <input type="password" id="password" name="password" required
+                                    class="rounded-xl border border-slate-200 pl-11 pr-4 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none w-full"
+                                    placeholder="Enter a password">
+                            </div>
+                            <p class="text-sm text-red-500 mt-1" id="passwordError"></p>
+                        </div>
+
+                        <div>
+                            <label for="mobile" class="text-sm font-medium text-slate-700">Mobile Number <span class="text-slate-400 font-normal">(optional)</span></label>
+                            <div class="relative mt-1.5">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400"><i class="fas fa-mobile-screen-button"></i></span>
+                                <input type="text" id="mobile" name="mobile_number"
+                                    class="rounded-xl border border-slate-200 pl-11 pr-4 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none w-full"
+                                    placeholder="10-digit mobile number">
+                            </div>
+                            <p class="text-sm text-red-500 mt-1" id="mobileError"></p>
+                        </div>
+
+                        <div>
+                            <label for="role" class="text-sm font-medium text-slate-700">Role</label>
+                            <div class="relative mt-1.5">
+                                <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400"><i class="fas fa-user-tag"></i></span>
+                                <select id="role" name="role"
+                                    class="appearance-none rounded-xl border border-slate-200 pl-11 pr-10 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none w-full bg-white">
+                                    <option value="member">Member</option>
+                                    <option value="volunteer">Volunteer</option>
+                                    <option value="admin">Admin</option>
+                                </select>
+                                <span class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 pointer-events-none"><i class="fas fa-chevron-down text-xs"></i></span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="gradient-brand text-white rounded-xl py-3 font-semibold w-full shadow-soft hover:opacity-90 transition inline-flex items-center justify-center gap-2">
+                            <i class="fas fa-user-plus"></i> Register
+                        </button>
+                    </form>
+
+                    <p class="text-center text-sm text-slate-500 mt-6">
+                        Already a member?
+                        <a href="members.html" class="font-semibold text-brand-600 hover:text-brand-700 hover:underline">Browse members</a>
+                        or
+                        <a href="contact.html" class="font-semibold text-brand-600 hover:text-brand-700 hover:underline">contact us</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300">
+        <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-10">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="inline-flex items-center justify-center h-9 w-9 rounded-lg gradient-brand text-white font-bold">C</span>
+                    <span class="text-lg font-bold text-white">Community</span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed">A modern community platform fostering meaningful connections, growth and collaboration.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                    <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                    <li><a href="services.html" class="hover:text-white transition">Services</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Contact</h4>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><i class="fas fa-envelope w-5 text-brand-400"></i> info@community.com</li>
+                    <li><i class="fas fa-phone w-5 text-brand-400"></i> +91 98765 43210</li>
+                    <li><i class="fas fa-location-dot w-5 text-brand-400"></i> 123 Community Street, Bengaluru</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Follow Us</h4>
+                <div class="flex gap-3">
+                    <a href="#" class="h-10 w-10 rounded-lg bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="h-10 w-10 rounded-lg bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="h-10 w-10 rounded-lg bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="h-10 w-10 rounded-lg bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
-    </nav>
-
-    <div class="container mx-auto px-6 py-12">
-        <h1 class="text-4xl font-bold text-primary text-center mb-8">Register Now</h1>
-        <div class="max-w-lg mx-auto register-container">
-            <form id="registerForm">
-                <div class="mb-6">
-                    <label for="username" class="block text-gray-700 mb-2">Username</label>
-                    <input type="text" id="username" name="username" required
-                        class="border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none"
-                        placeholder="Enter your username">
-                    <p class="error-message" id="usernameError"></p>
-                </div>
-                <div class="mb-6">
-                    <label for="email" class="block text-gray-700 mb-2">Email</label>
-                    <input type="email" id="email" name="email" required
-                        class="border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none"
-                        placeholder="Enter your email">
-                    <p class="error-message" id="emailError"></p>
-                </div>
-                <div class="mb-6">
-                    <label for="password" class="block text-gray-700 mb-2">Password</label>
-                    <input type="password" id="password" name="password" required
-                        class="border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none"
-                        placeholder="Enter a password">
-                    <p class="error-message" id="passwordError"></p>
-                </div>
-                <div class="mb-6">
-                    <label for="mobile" class="block text-gray-700 mb-2">Mobile Number</label>
-                    <input type="text" id="mobile" name="mobile_number"
-                        class="border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none"
-                        placeholder="Optional">
-                    <p class="error-message" id="mobileError"></p>
-                </div>
-                <div class="mb-6">
-                    <label for="role" class="block text-gray-700 mb-2">Role</label>
-                    <select id="role" name="role"
-                        class="border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none">
-                        <option value="member">Member</option>
-                        <option value="volunteer">Volunteer</option>
-                        <option value="admin">Admin</option>
-                    </select>
-                </div>
-                <button type="submit" class="w-full register-btn text-center font-semibold hover:bg-opacity-90">
-                    Register
-                </button>
-            </form>
+        <div class="border-t border-slate-800 py-6 text-center text-sm text-slate-500">
+            <p>&copy; 2024 Community. All rights reserved.</p>
         </div>
-    </div>
+    </footer>
 
     <script>
         document.getElementById("registerForm").addEventListener("submit", function (e) {
