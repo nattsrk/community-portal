@@ -11,10 +11,10 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: { 50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81' }
+                        brand: { 50: 'var(--brand-50)', 100: 'var(--brand-100)', 200: 'var(--brand-200)', 300: 'var(--brand-300)', 400: 'var(--brand-400)', 500: 'var(--brand-500)', 600: 'var(--brand-600)', 700: 'var(--brand-700)', 800: 'var(--brand-800)', 900: 'var(--brand-900)' }
                     },
                     fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
-                    boxShadow: { soft: '0 10px 30px -12px rgba(79,70,229,0.35)' }
+                    boxShadow: { soft: '0 10px 30px -12px rgba(0,0,0,0.18)' }
                 }
             }
         }
@@ -23,17 +23,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script>(function(){try{var s=localStorage.getItem('cp-theme');document.documentElement.setAttribute('data-theme', s==='navy'?'navy':'sand');}catch(e){document.documentElement.setAttribute('data-theme','sand');}})();</script>
     <style>
+        :root, [data-theme="sand"] {
+            --brand-50:#f7f1e8; --brand-100:#f1e6d6; --brand-200:#e6d2b4; --brand-300:#d9b98a; --brand-400:#cfa15c; --brand-500:#c2772a; --brand-600:#b45309; --brand-700:#92400e; --brand-800:#7c3a0f; --brand-900:#653110;
+            --page-bg:#faf8f5;
+            --gradient-hero: linear-gradient(135deg, #44403c 0%, #78716c 100%);
+            --gradient-brand: linear-gradient(135deg, #b45309 0%, #d97706 100%);
+            --grad-text-from:#b45309; --grad-text-to:#d97706;
+            --soft:rgba(120,53,15,.30);
+        }
+        [data-theme="navy"] {
+            --brand-50:#eef1f6; --brand-100:#e3e9f1; --brand-200:#d8c79a; --brand-300:#cbb574; --brand-400:#d4a843; --brand-500:#c79a35; --brand-600:#b8860b; --brand-700:#9a6f08; --brand-800:#7c5a06; --brand-900:#5e4405;
+            --page-bg:#f5f7fa;
+            --gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --gradient-brand: linear-gradient(135deg, #a87b1e 0%, #c89b3c 100%);
+            --grad-text-from:#b8860b; --grad-text-to:#d4a843;
+            --soft:rgba(15,23,42,.30);
+        }
+        .gradient-hero { background: var(--gradient-hero); }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
-        .gradient-brand { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #9333ea 100%); }
-        .gradient-text { background: linear-gradient(135deg, #4f46e5, #9333ea); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--page-bg); color: #0f172a; }
+        .gradient-brand { background: var(--gradient-brand); }
+        .gradient-text { background: linear-gradient(135deg, var(--grad-text-from), var(--grad-text-to)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
         .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
-        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -16px rgba(79,70,229,.35); }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -16px var(--soft); }
         .glass { background: rgba(255,255,255,.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
         .nav-link { position: relative; color: #334155; font-weight: 500; transition: color .2s; }
-        .nav-link:hover { color: #4f46e5; }
-        .nav-link::after { content: ''; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0; background: #4f46e5; transition: width .25s; }
+        .nav-link:hover { color: var(--brand-600); }
+        .nav-link::after { content: ''; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0; background: var(--brand-600); transition: width .25s; }
         .nav-link:hover::after { width: 100%; }
         .hero-grid { background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.18) 1px, transparent 0); background-size: 32px 32px; }
     </style>
@@ -59,7 +77,8 @@
                     <a href="store.html" class="nav-link">Store</a>
                     <a href="contact.html" class="nav-link">Contact</a>
                 </div>
-                <div class="hidden lg:block">
+                <div class="hidden lg:flex items-center gap-3">
+                    <button id="theme-toggle" type="button" aria-label="Switch colour theme" class="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-200 text-slate-600 hover:text-brand-600 hover:border-brand-300 transition text-sm font-medium"><i class="fas fa-palette"></i><span id="theme-label">Navy &amp; Gold</span></button>
                     <a href="register.html" class="inline-flex items-center gap-2 gradient-brand text-white px-5 py-2.5 rounded-xl font-semibold shadow-soft hover:opacity-90 transition">Register</a>
                 </div>
                 <button id="menu-toggle" class="lg:hidden text-slate-700 text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
@@ -75,6 +94,7 @@
             <a href="matrimony.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Matrimony</a>
             <a href="store.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Store</a>
             <a href="contact.html" class="block py-1 text-slate-700 hover:text-brand-600 font-medium">Contact</a>
+            <button id="theme-toggle-m" type="button" class="flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-medium mt-2"><i class="fas fa-palette"></i><span id="theme-label-m">Navy &amp; Gold</span></button>
             <a href="register.html" class="gradient-brand text-white text-center px-5 py-2.5 rounded-xl font-semibold mt-2">Register</a>
         </div>
     </header>
@@ -82,6 +102,12 @@
         document.addEventListener('DOMContentLoaded', function () {
             var t = document.getElementById('menu-toggle'), m = document.getElementById('mobile-menu');
             if (t && m) t.addEventListener('click', function () { m.classList.toggle('hidden'); m.classList.toggle('flex'); });
+            function cur(){ return document.documentElement.getAttribute('data-theme') || 'sand'; }
+            function label(){ var x = cur()==='navy' ? 'Warm Sand' : 'Navy & Gold'; var a=document.getElementById('theme-label'), b=document.getElementById('theme-label-m'); if(a)a.textContent=x; if(b)b.textContent=x; }
+            function flip(){ var n = cur()==='sand' ? 'navy' : 'sand'; document.documentElement.setAttribute('data-theme', n); try{ localStorage.setItem('cp-theme', n); }catch(e){} label(); }
+            var d=document.getElementById('theme-toggle'); if(d) d.addEventListener('click', flip);
+            var dm=document.getElementById('theme-toggle-m'); if(dm) dm.addEventListener('click', flip);
+            label();
         });
     </script>
     <!-- Navbar End -->
@@ -102,7 +128,7 @@
 
             <div class="bg-white rounded-3xl shadow-soft border border-slate-100 overflow-hidden grid lg:grid-cols-2">
                 <!-- Promo Panel -->
-                <div class="relative gradient-brand text-white p-10 md:p-12 hidden lg:flex flex-col justify-between overflow-hidden">
+                <div class="relative gradient-hero text-white p-10 md:p-12 hidden lg:flex flex-col justify-between overflow-hidden">
                     <div class="absolute inset-0 hero-grid opacity-50"></div>
                     <div class="relative">
                         <span class="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-white/15 border border-white/20 text-2xl mb-6"><i class="fas fa-people-group"></i></span>
